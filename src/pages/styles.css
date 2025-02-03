@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.chat-box {
+    display: flex; /* Set chat box to flex */
+    flex-direction: column; /* Arrange messages in a column */
+    align-items: flex-start; /* Default alignment for messages */
+    overflow-y: auto; /* Allow scrolling if messages overflow */
+    padding: 10px; /* Add padding to the chat box */
+    text-align: left;
+}
+
+.chat-box div, .chat-box pre {
+    border-radius: 20px; /* Rounded corners for individual messages */
+    padding: 10px;
+    margin: 5px 0; /* Space between messages */
+    max-width: 80%; /* Limit message width */
+    word-wrap: break-word; /* Allow long words to break to the next line */
+    background-color: #e1f5fe; /* Optional: Same background as user messages */
+}
+
+.chat-box div:nth-child(odd) {
+    background-color: #e1f5fe; /* Light blue for user messages */
+    align-self: flex-end; /* Align user messages to the right */
+}
+
+.chat-box div:nth-child(even) {
+    background-color: #ffe0b2; /* Light orange for assistant messages */
+    align-self: flex-start; /* Align assistant messages to the left */
+}
+
+.chat-box pre {
+    background-color: #ffe0b2; /* Optional: Different background for preformatted text */
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    font-family: Arial, sans-serif;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Rounded corners for input */
+    margin-right: 10px; /* Space between input and button */
+}
+
+button {
+    padding: 10px 15px;
+    width: auto;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px; /* Rounded corners for button */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Optional: Media query for smaller screens */
+@media (max-width: 600px) {
+    .chat-box {
+        width: 95%; /* Increase width on smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    input {
+        width: 95%;
+    }
+
+    button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+.chat-note {
+    text-align: left; /* Align text to the left */
+    margin: 50px 0; /* Optional: Add some margin for spacing */
+}
